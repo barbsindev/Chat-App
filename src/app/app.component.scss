@@ -50,6 +50,8 @@
     border-radius: 50px;
   }
 
+  //given more time I would fix the grid layout in media queries to make it 100% responsive
+
   @media screen and(max-width:780px) {
     .person {
       grid-template-columns: 1fr 1fr;
