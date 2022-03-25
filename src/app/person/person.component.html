@@ -1,0 +1,18 @@
+<mat-card class="card" #person>
+  <mat-label class="card__label"
+    >Person {{ index === 0 ? 1 : index && index + 1 }}</mat-label
+  >
+  <mat-form-field appearance="outline" class="card__textarea">
+    <mat-label>Enter you message here...</mat-label>
+    <textarea matInput [(ngModel)]="textarea"></textarea>
+  </mat-form-field>
+  <button
+    mat-icon-button
+    color="primary"
+    class="card__btn"
+    [disabled]="textarea === ''"
+    (click)="sendMessage()"
+  >
+    <mat-icon class="icon">keyboard_arrow_right</mat-icon>SEND
+  </button>
+</mat-card>

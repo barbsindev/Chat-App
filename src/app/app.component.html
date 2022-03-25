@@ -1,0 +1,39 @@
+<main class="app">
+  <header class="header">
+    <h1>Simple Chat Application</h1>
+    <button mat-mini-fab class="header__btn btn" (click)="addPersonComponent()">
+      <mat-icon>add</mat-icon>ADD NEW PERSON
+    </button>
+  </header>
+
+  <section class="person">
+    <div #person *ngFor="let person of persons; let i = index">
+      <app-person *ngIf="i < 9" [index]="i"> {{ i + 1 }}</app-person>
+    </div>
+  </section>
+
+  <section class="chat-window">
+    <mat-card>
+      <mat-card-title> Chat window </mat-card-title>
+      <mat-card *ngFor="let message of messages">
+        <mat-list>
+          <mat-card-subtitle
+            >Person
+            {{ message.data.personNumber }}
+          </mat-card-subtitle>
+          <mat-card-content
+            ><p>{{ message.data.message }}</p>
+          </mat-card-content>
+        </mat-list>
+      </mat-card>
+
+      <button
+        mat-mini-fab
+        class="chat-window__btn btn"
+        (click)="clearMessages()"
+      >
+        <mat-icon>close</mat-icon>CLEAR CHAT WINDOW
+      </button>
+    </mat-card>
+  </section>
+</main>

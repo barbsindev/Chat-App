@@ -1,0 +1,74 @@
+.app {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 66% 33%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .app .app {
+    background-color: red;
+  }
+}
+
+.app .header {
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.app .header__btn {
+  margin-top: 0;
+}
+
+.app .person {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+}
+
+.app .chat-window {
+  grid-row: 2;
+  padding-left: 20px;
+}
+
+.app .chat-window__btn {
+  margin-top: 10px;
+  margin-left: auto;
+}
+
+.app .btn {
+  background-color: #6201ef;
+  color: white;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+@media screen and (max-width: 780px) {
+  .app .person {
+    grid-template-columns: 1fr 1fr;
+  }
+  .app .chat-window {
+    grid-row: none;
+  }
+  .app .chat-window mat-card {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app .person {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=app.component.css.map */
